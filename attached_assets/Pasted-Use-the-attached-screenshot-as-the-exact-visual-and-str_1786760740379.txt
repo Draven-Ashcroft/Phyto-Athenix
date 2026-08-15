@@ -1,0 +1,171 @@
+Use the attached screenshot as the exact visual and structural reference for the “Stimulate Pollination” state of the biology simulation.
+
+CORE REQUIREMENT
+
+When the user taps “Stimulate Pollination”, the simulation should transition into a scientifically coherent pollination sequence while preserving the existing dashboard's overall design language.
+
+Do NOT redesign the interface. Do NOT replace the existing panels. Do NOT change the visual identity. Treat the screenshot as the target appearance and improve only the interaction/state behavior required for pollination.
+
+VISUAL STYLE TO PRESERVE
+
+- Dark navy/black scientific dashboard background.
+- Neon cyan, violet, magenta, green, orange and blue accents.
+- Glassmorphism-style panels with subtle borders.
+- Glowing biological structures.
+- Premium interactive textbook / scientific simulator aesthetic.
+- Clean typography and strong visual hierarchy.
+- Realistic biological illustrations combined with precise UI diagrams.
+- Maintain the same panel proportions, spacing, rounded corners, icons and overall composition shown in the reference.
+
+WHEN “STIMULATE POLLINATION” IS TAPPED
+
+Create a clear animated transition rather than instantly changing the screen.
+
+1. Pollen release
+
+Show pollen grains being released from the anther.
+
+- Animate individual pollen grains leaving the pollen sacs.
+- Pollen should move toward the stigma rather than randomly floating.
+- Use a subtle glowing trajectory/path to make the movement understandable.
+- Preserve realistic pollen-grain appearance.
+
+2. Pollen deposition
+
+Show pollen grains arriving at the stigma.
+
+- Several grains should visibly contact the stigma surface.
+- Highlight the successful pollen grain.
+- Other grains may remain inactive.
+- Avoid making pollen grains look like generic glowing particles.
+
+3. Pollen germination
+
+After successful pollen deposition, animate one pollen grain germinating.
+
+Show:
+
+Pollen grain → pollen tube formation → pollen tube growth
+
+The pollen tube should emerge from the pollen grain and visibly elongate through the stigma/style.
+
+4. Male gametophyte / sperm-cell representation
+
+As the pollen tube develops, show the relevant male gametophytic contents moving through it.
+
+Keep this appropriate for the intended educational level and avoid unnecessary molecular complexity.
+
+5. Gene/trait connection
+
+Because this simulator specifically demonstrates the relationship between:
+
+DNA → Gene → Expression → Trait
+
+retain the existing gene visualization.
+
+The selected gene should remain connected conceptually to the resulting biological trait rather than disappearing when pollination begins.
+
+INTERACTION STATE
+
+After tapping Stimulate Pollination:
+
+- Change the button state to indicate that pollination is active.
+- Add a clear progress/status indicator such as:
+  POLLINATION ACTIVE
+- Allow Pause / Replay / Reset controls to function.
+- The existing top navigation and DNA/Chromosome/Gene controls must remain usable unless the simulation is intentionally paused.
+- Do not freeze the entire dashboard.
+
+IMPORTANT SCIENTIFIC CORRECTIONS
+
+Do not imply that:
+
+“Each gene controls DNA.”
+
+Instead, communicate the correct relationship:
+
+DNA contains genes → genes contain instructions → gene expression contributes to traits.
+
+Also do not represent a gene as a physically separate object floating outside DNA. The highlighted “gene” should visually represent a specific DNA sequence/region.
+
+Likewise, chromosome → DNA → gene should be represented hierarchically:
+
+Chromosome contains DNA → DNA contains genes → genes influence biological traits.
+
+POLLEN/ANTHER VISUALIZATION
+
+Keep the excellent biological cross-sections shown in the reference:
+
+- Anther with pollen sacs.
+- Individual pollen grains.
+- Pollen grain interior.
+- Tube cell / generative cell representation where appropriate.
+- Chromatin/DNA visualization as an explanatory microscopic-style inset.
+
+Do not unnecessarily replace these illustrations with simplistic icons.
+
+ANIMATION BEHAVIOUR
+
+The sequence should feel like a scientific simulation rather than a decorative animation:
+
+Tap Stimulate Pollination
+↓
+Anther releases pollen
+↓
+Pollen travels to stigma
+↓
+Compatible pollen lands
+↓
+Pollen germinates
+↓
+Pollen tube grows
+↓
+Male gametes travel through pollen tube
+↓
+Fertilization stage becomes available
+
+Use smooth transitions and physically plausible movement.
+
+DO NOT CHANGE
+
+Do not:
+
+- redesign the dashboard;
+- change the color palette;
+- remove the DNA/chromosome/gene panels;
+- remove the pollen-grain or anther illustrations;
+- introduce unrelated UI elements;
+- add decorative clutter;
+- turn the simulation into a generic flower animation;
+- use random particle effects in place of pollen;
+- distort biological structures;
+- change existing labels unless scientifically necessary;
+- alter working interactions that are unrelated to pollination.
+
+FINAL TARGET
+
+The finished state should feel like a premium interactive Class X/XI biology teaching simulator: visually sophisticated enough to resemble a scientific visualization tool, but scientifically clear enough that a student can immediately understand the sequence:
+
+Anther → Pollen → Stigma → Germination → Pollen Tube → Male Gametes → Fertilization
+
+The attached screenshot is the design reference. Preserve its visual language and quality while implementing the complete interactive Stimulate Pollination sequence.
+
+
+FIX PATCH — STIMULATE POLLINATION
+
+Fix the pollination simulation so that tapping “Stimulate Pollination” immediately initiates and completes the entire pollination process in the current simulation cycle.
+
+Required behavior:
+
+- On tap, the button should trigger the complete pollination sequence in one continuous action.
+- Do NOT make the user wait 20 days for another pollination cycle to complete the current action.
+- Do NOT require the user to repeatedly tap the button to advance stages.
+- Visually animate the pollen transfer from anther → stigma and then update the flower state to successfully pollinated.
+- Once successful, immediately update all dependent UI/state variables.
+- The simulation may still display the biological 20-day developmental timeline afterward, but this must be represented as simulated/accelerated progression rather than blocking the user for 20 real days.
+- The button should become temporarily disabled while the animation is running to prevent duplicate triggers.
+- After completion, restore the button appropriately for a new simulation cycle.
+- Preserve all existing styling, layout, animations, labels, biological logic, and other functionality.
+
+Important:
+The 20-day period should represent the biological timeline, not a real-time waiting requirement. The user must be able to complete the pollination simulation immediately with a single tap.

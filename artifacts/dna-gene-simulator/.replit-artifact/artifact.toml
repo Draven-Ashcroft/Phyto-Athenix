@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Phyto Athenix"
+description = "An interactive educational biology simulation that lets students explore DNA genes, inherited flower traits, and the stages of pollination through animated visualizations."
+version = "1.0.0"
+id = "artifacts/dna-gene-simulator"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24819
+
+[services.development]
+run = "pnpm --filter @workspace/dna-gene-simulator run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/dna-gene-simulator", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/dna-gene-simulator/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24819"
+BASE_PATH = "/"
