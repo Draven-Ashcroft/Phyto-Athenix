@@ -324,21 +324,23 @@ export default function DnaPanel({ geneColor, randomSeed, selectedGeneId, onGene
         initial={{ opacity: 0 }}
         animate={{ opacity: showChromosome ? 0 : 1 }}
         transition={{ duration: 0.35, delay: showChromosome ? 0 : 0.3 }}
-        className="pointer-events-none absolute inset-x-0 top-0 z-20 h-[clamp(104px,15vh,138px)] border-b border-[#bfe3ee18] bg-[#03020acc] backdrop-blur-[2px]"
+        className="phyto-brand-header pointer-events-none absolute inset-x-0 top-0 z-20 h-[clamp(104px,15vh,138px)] border-b border-[#bfe3ee18] bg-[#03020acc] backdrop-blur-[2px]"
       >
-        <PhytoEmblem className="absolute left-[clamp(16px,4.4vw,56px)] top-1/2 h-[clamp(56px,8vw,88px)] w-[clamp(56px,8vw,88px)] -translate-y-1/2" />
-        <div className="absolute inset-0 flex flex-col items-center justify-center px-[clamp(74px,12vw,148px)] pt-1 font-sans">
-          <h1 className="m-0 whitespace-nowrap text-[clamp(21px,3.8vw,48px)] font-bold tracking-[0.08em] text-[#f8f5ff]">
-            PHYTO ATHENIX
-          </h1>
-          <div className="relative my-[clamp(5px,0.8vh,9px)] h-px w-full max-w-[680px] bg-gradient-to-r from-transparent via-[#8b5cf6] to-transparent opacity-80">
-            <span className="absolute -left-1 top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full bg-[#8b5cf6] shadow-[0_0_8px_#8b5cf6]" />
-            <span className="absolute -right-1 top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full bg-[#8b5cf6] shadow-[0_0_8px_#8b5cf6]" />
-            <span className="absolute left-1/2 top-1/2 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rotate-45 border border-[#c4b5fd] bg-[#7c3aed] shadow-[0_0_12px_#a78bfa]" />
+        <div className="phyto-brand-lockup absolute inset-0 flex items-center justify-center gap-[clamp(10px,1.8vw,24px)] px-[clamp(16px,4.4vw,56px)] py-2 font-sans">
+          <PhytoEmblem className="phyto-brand-emblem h-[clamp(52px,6vw,78px)] w-[clamp(52px,6vw,78px)] shrink-0" />
+          <div className="min-w-0 text-center">
+            <h1 className="m-0 whitespace-nowrap text-[clamp(20px,3.1vw,42px)] font-bold tracking-[0.14em] text-[#f8f5ff]">
+              PHYTO ATHENIX
+            </h1>
+            <div className="relative mx-auto my-[clamp(4px,0.6vh,7px)] h-px w-[min(100%,560px)] bg-gradient-to-r from-transparent via-[#8b5cf6] to-transparent opacity-65">
+              <span className="absolute -left-1 top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full bg-[#8b5cf6] shadow-[0_0_8px_#8b5cf6]" />
+              <span className="absolute -right-1 top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full bg-[#8b5cf6] shadow-[0_0_8px_#8b5cf6]" />
+              <span className="absolute left-1/2 top-1/2 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rotate-45 border border-[#c4b5fd] bg-[#7c3aed] shadow-[0_0_12px_#a78bfa]" />
+            </div>
+            <p className="m-0 whitespace-nowrap text-[clamp(9px,1.2vw,16px)] font-medium tracking-[0.05em] text-[#aaa6bb]">
+              Interactive Biology Simulation Platform
+            </p>
           </div>
-          <p className="m-0 whitespace-nowrap text-[clamp(10px,1.7vw,20px)] font-medium tracking-[0.04em] text-[#a78bfa]">
-            Decoding DNA, Genes &amp; Traits
-          </p>
         </div>
       </motion.div>
 

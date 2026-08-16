@@ -1,0 +1,69 @@
+I want to update ONLY the Phyto Athenix branding/header area.
+
+Use the attached reference screenshot as inspiration for the HEADER STYLE only.
+
+REFERENCE:
+The screenshot shows the visual style I want:
+- A distinctive circular emblem/icon positioned to the left of the project name.
+- The emblem has a dark circular container with a subtle glowing halo around it.
+- The project name uses a bold, clean, modern uppercase sans-serif font.
+- Strong letter spacing and a premium scientific/technical appearance.
+- A smaller subtitle sits underneath the main title in a lighter, understated font.
+- The overall presentation is dark, minimal, scientific, and sophisticated.
+
+Apply this visual language to the existing Phyto Athenix application.
+
+IMPORTANT:
+DO NOT redesign the application.
+DO NOT change the existing simulator UI.
+DO NOT change the existing layout, controls, simulations, functionality, animations, colors, or educational content.
+
+Only redesign the Phyto Athenix branding/header.
+
+For the header:
+
+1. Create a distinctive circular Phyto Athenix emblem on the left of the title.
+   - It should be botanical/scientific in character.
+   - Keep it simple and recognizable at small sizes.
+   - Use a dark circular badge/container.
+   - Add a subtle soft glow around the emblem.
+   - Do not make it excessively neon or flashy.
+
+2. Display:
+
+PHYTO ATHENIX
+
+as the primary title.
+
+3. Use a bold, clean, modern uppercase sans-serif typeface similar in visual weight and spacing to the reference screenshot.
+   - Strong but not oversized.
+   - Clean geometric appearance.
+   - Good readability on both mobile and large touchscreen displays.
+   - Preserve responsive behavior.
+
+4. Add an understated subtitle underneath:
+   Interactive Biology Simulation Platform
+
+5. Maintain the existing dark Phyto Athenix visual identity.
+
+6. Make the header responsive:
+   - On mobile, emblem + title should remain compact and properly aligned.
+   - On tablets/large screens, scale proportionally without becoming enormous.
+   - Do not allow the title to wrap awkwardly.
+   - Do not create excessive empty space.
+
+7. Preserve accessibility:
+   - Proper semantic heading.
+   - Good contrast.
+   - Emblem should have appropriate alt text if implemented as an image.
+
+Most importantly:
+This is a BRANDING UPDATE, NOT A REDESIGN.
+
+Before editing, inspect the existing header implementation and modify only the necessary files/components/styles.
+
+After implementation, run the application and verify that:
+- Phyto Athenix still loads.
+- All existing simulator functionality remains unchanged.
+- Mobile layout remains intact.
+- The new header looks consistent with the reference style.
