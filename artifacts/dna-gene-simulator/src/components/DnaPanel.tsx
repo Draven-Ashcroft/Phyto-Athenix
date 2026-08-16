@@ -359,10 +359,9 @@ export default function DnaPanel({ geneColor, randomSeed, selectedGeneId, onGene
             <div className="relative mx-auto my-[clamp(4px,0.6vh,7px)] h-px w-[min(100%,560px)] bg-gradient-to-r from-transparent via-[#8b5cf6] to-transparent opacity-65">
               <span className="absolute -left-1 top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full bg-[#8b5cf6] shadow-[0_0_8px_#8b5cf6]" />
               <span className="absolute -right-1 top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full bg-[#8b5cf6] shadow-[0_0_8px_#8b5cf6]" />
-              <span className="absolute left-1/2 top-1/2 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rotate-45 border border-[#c4b5fd] bg-[#7c3aed] shadow-[0_0_12px_#a78bfa]" />
             </div>
             <p className="m-0 whitespace-nowrap text-[clamp(9px,1.2vw,16px)] font-medium tracking-[0.05em] text-[#aaa6bb]">
-              Interactive Biology Simulation Platform
+              Interactive Genetics &amp; Inheritance Simulator
             </p>
           </div>
         </div>
