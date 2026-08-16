@@ -63,6 +63,9 @@ function ChromosomeView({
               <feMergeNode in="SourceGraphic" />
             </feMerge>
           </filter>
+          <filter id="chromosome-gene-soft-glow" x="-120%" y="-120%" width="340%" height="340%">
+            <feGaussianBlur stdDeviation="4.5" />
+          </filter>
           <linearGradient id="chromosome-arm" x1="0" y1="0" x2="1" y2="1">
             <stop offset="0" stopColor="#5fd8e8" />
             <stop offset="0.48" stopColor="#a78bfa" />
@@ -111,7 +114,7 @@ function ChromosomeView({
                   onGeneClick(def.id);
                 }
               }}
-              className="cursor-pointer"
+              className="chromosome-gene-region cursor-pointer focus:outline-none"
             >
               <line
                 x1={locus.x}
@@ -128,11 +131,32 @@ function ChromosomeView({
                 width="34"
                 height="12"
                 rx="6"
-                fill={`rgba(${rgb},${isSelected ? 0.42 : 0.18})`}
-                stroke={`rgba(${rgb},${isSelected ? 0.95 : 0.55})`}
-                strokeWidth={isSelected ? 2 : 1}
-                filter={isSelected ? 'url(#chromosome-glow)' : undefined}
+                fill={color}
+                opacity={isSelected ? 0.6 : 0}
+                filter={isSelected ? 'url(#chromosome-gene-soft-glow)' : undefined}
+                pointerEvents="none"
               />
+              <rect
+                x={locus.x - 17}
+                y={locus.y - 6}
+                width="34"
+                height="12"
+                rx="6"
+                fill={`rgba(${rgb},${isSelected ? 0.34 : 0.18})`}
+                stroke={isSelected ? 'transparent' : `rgba(${rgb},0.55)`}
+                strokeWidth={isSelected ? 0 : 1}
+              />
+              {isSelected && (
+                <circle
+                  cx={locus.x}
+                  cy={locus.y}
+                  r="8"
+                  fill={color}
+                  opacity=".45"
+                  filter="url(#chromosome-gene-soft-glow)"
+                  pointerEvents="none"
+                />
+              )}
               <circle
                 cx={locus.x}
                 cy={locus.y}

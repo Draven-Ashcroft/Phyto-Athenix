@@ -113,6 +113,15 @@
   border-radius: 2px;
 }
 
+/* The SVG gene regions provide their own selected glow; never show a browser box. */
+.chromosome-gene-region,
+.chromosome-gene-region:focus,
+.chromosome-gene-region:focus-visible {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
 /*
  * Responsive stage sizing
  *
