@@ -1,5 +1,0 @@
-{
-  "buildCommand": "pnpm --filter @workspace/dna-gene-simulator build",
-  "outputDirectory": "artifacts/dna-gene-simulator/dist/public",
-  "framework": "vite"
-}
