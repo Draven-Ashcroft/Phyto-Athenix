@@ -169,6 +169,7 @@ function CutawayPollen({
 }) {
   const { r: gr, g: gg, b: gb } = hexToRgb(geneColor);
   const locusColor = selectedGeneId === 0 ? geneColor : GENE_COLORS[selectedGeneId];
+  const selectedLocus = POLLEN_GENE_LOCI[selectedGeneId];
   const showInterior  = stage >= 5;
   const showGene      = stage >= 6;
 
@@ -442,28 +443,29 @@ function CutawayPollen({
                     onSelectGene(locus.id);
                   }
                 }}
+                className="pollen-gene-locus"
                 style={{ cursor: 'pointer' }}
               >
                 <circle cx={locus.x} cy={locus.y} r="4.5" fill="transparent" />
                 <circle
                   cx={locus.x}
                   cy={locus.y}
-                  r={isSelected ? 2.8 : 1.8}
+                  r={isSelected ? 2.3 : 1.8}
                   fill={color}
-                  opacity={isSelected ? 1 : 0.66}
+                  opacity={isSelected ? 0.82 : 0.66}
                   stroke={color}
-                  strokeWidth={isSelected ? 1 : 0.5}
+                  strokeWidth={isSelected ? 0.65 : 0.5}
                 />
                 {isSelected && (
                   <motion.circle
                     cx={locus.x}
                     cy={locus.y}
-                    r="4.2"
+                    r="3.8"
                     fill="none"
                     stroke={color}
-                    strokeWidth="0.8"
-                    animate={{ opacity: [0.8, 0.1, 0.8], r: [3.2, 5.1, 3.2] }}
-                    transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
+                    strokeWidth="0.55"
+                    animate={{ opacity: [0.34, 0.12, 0.34], r: [3.5, 4.6, 3.5] }}
+                    transition={{ duration: 2.8, repeat: Infinity, ease: 'easeInOut' }}
                   />
                 )}
               </g>
@@ -491,20 +493,33 @@ function CutawayPollen({
         </motion.g>
 
         {/* ── Gene locus highlight (stage 6) ── */}
-        {showGene && (
+        {showGene && selectedLocus && (
           <motion.g
             initial={{ opacity: 0 }} animate={{ opacity: 1 }}
             transition={{ duration: 0.9 }}
-            filter="url(#gene-glow)"
+            opacity=".58"
           >
+            {/* One shared selection state: this softly maps the selected locus to the chromatin reference. */}
+            <path
+              d={`M${selectedLocus.x},${selectedLocus.y} Q49,51 53,45`}
+              stroke={locusColor}
+              strokeWidth="0.45"
+              strokeLinecap="round"
+              strokeDasharray="1.2 1.8"
+              fill="none"
+              opacity=".55"
+            />
             <path d="M53,45 Q55,49 52,51"
-              stroke={locusColor} strokeWidth="3.8" strokeLinecap="round" fill="none"
+              stroke={locusColor} strokeWidth="2.4" strokeLinecap="round" fill="none"
+              filter="url(#gene-glow)"
               className="transition-colors duration-500"/>
             <motion.path d="M53,45 Q55,49 52,51"
-              stroke={locusColor} strokeWidth="6" strokeLinecap="round" fill="none"
+              stroke={locusColor} strokeWidth="4.2" strokeLinecap="round" fill="none"
+              opacity=".42"
+              filter="url(#gene-glow)"
               className="transition-colors duration-500"
-              animate={{ opacity:[0.3,0.75,0.3] }}
-              transition={{ duration:1.8, repeat:Infinity, ease:'easeInOut' }}/>
+              animate={{ opacity:[0.12,0.32,0.12] }}
+              transition={{ duration:2.8, repeat:Infinity, ease:'easeInOut' }}/>
           </motion.g>
         )}
       </motion.g>
@@ -543,10 +558,11 @@ function PollenGeneLegend({
               key={def.id}
               type="button"
               onClick={() => onSelectGene(def.id)}
-              className={`flex min-w-0 items-center gap-1 rounded-md border px-1.5 py-1 text-left text-[9px] transition-all ${active ? 'text-white' : 'border-white/[0.08] text-[#9488bd] hover:bg-white/[0.06]'}`}
+              className={`flex min-w-0 items-center gap-1 rounded-md border px-1.5 py-1 text-left text-[9px] transition-all ${active ? 'text-[#eeeaff]' : 'border-white/[0.08] text-[#9488bd] hover:bg-white/[0.06]'}`}
               style={active ? {
-                backgroundColor: `${color}26`,
-                borderColor: `${color}88`,
+                backgroundColor: `${color}0d`,
+                borderColor: `${color}aa`,
+                boxShadow: `0 0 0 1px ${color}1c, 0 0 12px ${color}24`,
               } : undefined}
             >
               <span className="h-1.5 w-1.5 shrink-0 rounded-full" style={{ backgroundColor: color }} />

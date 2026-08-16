@@ -132,7 +132,7 @@ function ChromosomeView({
                 height="12"
                 rx="6"
                 fill={color}
-                opacity={isSelected ? 0.6 : 0}
+                opacity={isSelected ? 0.78 : 0}
                 filter={isSelected ? 'url(#chromosome-gene-soft-glow)' : undefined}
                 pointerEvents="none"
               />
@@ -142,7 +142,7 @@ function ChromosomeView({
                 width="34"
                 height="12"
                 rx="6"
-                fill={`rgba(${rgb},${isSelected ? 0.34 : 0.18})`}
+                fill={`rgba(${rgb},${isSelected ? 0.42 : 0.18})`}
                 stroke={isSelected ? 'transparent' : `rgba(${rgb},0.55)`}
                 strokeWidth={isSelected ? 0 : 1}
               />

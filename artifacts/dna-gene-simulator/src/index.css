@@ -122,6 +122,14 @@
   user-select: none;
 }
 
+.pollen-gene-locus,
+.pollen-gene-locus:focus,
+.pollen-gene-locus:focus-visible {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
 /*
  * Responsive stage sizing
  *
